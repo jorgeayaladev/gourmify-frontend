@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- ICON TAB -->
+  <link rel="shortcut icon" href="./assets/gourmify.ico" type="image/x-icon">
+  <!-- STYLES CSS -->
+  <link rel="stylesheet" href="css/style.css">
+  <!-- TAILWIND CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- FONT AWESOME ICONS -->
+  <script src="https://kit.fontawesome.com/56fc836282.js" crossorigin="anonymous"></script>
+
+  <title>Dashboard</title>
+</head>
+
+<body>
+  <!-- MENU SCREEN -->
+  <div
+    class="fixed w-screen h-screen p-5 flex flex-col items-center justify-center gap-5 bg-gradient-to-tr from-yellow-900 to-yellow-600 border-l border-y border-white transition-all duration-700 ease-in translate-x-full rounded-l-2xl"
+    id="menu">
+    <!-- HEADER -->
+    <header class="w-full p-3 flex justify-between bg-white rounded-lg">
+      <div class="flex gap-3">
+        <button title="perfil"
+          class="w-9 h-9 flex items-center justify-center border border-gray-700 shadow-xl text-gray-700 rounded-[50%]">
+          <i class="fa-solid fa-user"></i>
+        </button>
+        <button title="mensajes"
+          class="w-9 h-9 flex items-center justify-center border border-gray-700 shadow-xl text-gray-700 rounded-[50%]">
+          <i class="fa-solid fa-comments"></i>
+        </button>
+        <button title="notificaciones"
+          class="w-9 h-9 flex items-center justify-center border border-gray-700 shadow-xl text-gray-700 rounded-[50%]">
+          <i class="fa-solid fa-bell"></i>
+        </button>
+        <button title="Configuraciones"
+          class="w-9 h-9 flex items-center justify-center border border-gray-700 shadow-xl text-gray-700 rounded-[50%]">
+          <i class="fa-solid fa-gear"></i>
+        </button>
+      </div>
+      <button title="cerrar menú" onclick="closeMenu()"
+        class="w-9 h-9 flex items-center justify-center bg-gradient-to-tr from-gray-900 to-gray-500 text-white rounded-[50%]">
+        <i class="fa-solid fa-xmark"></i>
+      </button>
+    </header>
+    <!-- MENU DE OPCIONES -->
+    <main class="w-full h-full p-5 grid grid-cols-1 gap-5 bg-white rounded-lg">
+      <a href="dashboard.html"
+        class="flex items-center justify-center gap-3 bg-gradient-to-tr from-gray-900 to-gray-500 text-xl text-white font-bold rounded-lg">
+        <i class="fa-solid fa-house"></i>
+        <p>Inicio</p>
+      </a>
+      <button
+        class="flex items-center justify-center gap-3 border border-gray-700 bg-gradient-to-r from-gray-900 to-gray-500 inline-block text-xl font-bold text-transparent bg-clip-text shadow-lg rounded-lg">
+        <i class="fa-solid fa-bowl-food"></i>
+        <p>Menu</p>
+      </button>
+      <button
+        class="flex items-center justify-center gap-3 bg-gradient-to-tr from-gray-900 to-gray-500 text-xl text-white font-bold rounded-lg">
+        <i class="fa-solid fa-utensils"></i>
+        <p>Mesas</p>
+      </button>
+      <button
+        class="flex items-center justify-center gap-3 bg-gradient-to-tr from-gray-900 to-gray-500 text-xl text-white font-bold rounded-lg">
+        <i class="fa-solid fa-receipt"></i>
+        <p>Pedidos</p>
+      </button>
+      <button
+        class="flex items-center justify-center gap-3 bg-gradient-to-tr from-gray-900 to-gray-500 text-xl text-white font-bold rounded-lg">
+        <i class="fa-solid fa-chart-line"></i>
+        <p>Estadísticas</p>
+      </button>
+      <a href="index.html"
+        class="flex items-center justify-center gap-3 bg-gradient-to-tr from-gray-900 to-gray-500 text-xl text-white font-bold rounded-lg">
+        <i class="fa-solid fa-right-from-bracket"></i>
+        <p>Cerrar sesión</p>
+      </a>
+    </main>
+    <!-- FOOTER -->
+    <footer class="w-full p-2 bg-white flex justify-between text-sm text-right rounded-lg">
+      <p class="italic"><u class="font-medium">Designed by</u>: Gourmify</p>
+      <p class="italic">Version. 1.0.0</p>
+    </footer>
+  </div>
+
+  <!-- DASHBOARD SCREEN -->
+  <div class="p-5 h-screen flex flex-col gap-5 items-center bg-gradient-to-tr from-yellow-900 to-yellow-600">
+    <!-- HEADER -->
+    <header class="p-3 w-full flex justify-between bg-white rounded-lg shadow-2xl">
+      <!-- LOGO DE LA EMPRESA -->
+      <div class="flex items-center gap-2">
+        <img class="w-9 h-9" src="./assets/img/el_dorado_logo.png" alt="el_dorado_logo">
+        <h1 class="text-lg font-bold text-yellow-900">Restaurante, "El dorado"</h1>
+      </div>
+      <!-- DESPLIEGUE DEL MENU -->
+      <button title="abrir menú" onclick="openMenu()"
+        class="w-9 h-9 flex items-center justify-center text-white bg-gradient-to-tr from-yellow-900 to-yellow-600 rounded-[50%] shadow-lg">
+        <i class="fa-solid fa-bars"></i>
+      </button>
+    </header>
+
+    <!-- CONTENIDO DEL DASHBOARD -->
+    <main class="w-full h-full p-5 bg-white rounded-lg shadow-2xl overflow-y-scroll">
+      <!-- PRESENTACIÓN -->
+      <div class="flex flex-col gap-4">
+        <h1 class="text-2xl font-bold">¡Bienvenido 😄!</h1>
+        <p>
+          En esta aplicación serás capaz de gestionar las mesas y pedidos de los comensales del local, podrás tomar los
+          pedidos y enviarlos al área de cocina para su preparación 😁.
+        </p>
+        <hr class="border-black" />
+        <p>Te recomendamos seguir los siguientes pasos:</p>
+        <div class="flex flex-col gap-3">
+          <!-- PASO 1 -->
+          <div class="flex gap-2">
+            <div
+              class="w-6 h-6 bg-gradient-to-tr from-yellow-900 to-yellow-600 rounded-[50%] flex items-center justify-center text-xs text-white">
+              <i class="fa-solid fa-1"></i>
+            </div>
+            <p class="flex-1">
+              Primero debes verificar el menú del día y los productos que se están ofreciendo en carta para que puedas
+              informarle al comensal cuando lo solicite 😎.
+            </p>
+          </div>
+          <!-- PASO 2 -->
+          <div class="flex gap-2">
+            <div
+              class="w-6 h-6 bg-gradient-to-tr from-yellow-900 to-yellow-600 rounded-[50%] flex items-center justify-center text-xs text-white">
+              <i class="fa-solid fa-2"></i>
+            </div>
+            <p class="flex-1">
+              Luego, una vez identificado al comensal a atender, para tomar su pedido debes ir al Menu de la app y
+              seleccionar la opción "<a class="underline italic" href="mesas.html">Mesas</a>", luego
+              seleccionar la mesa correspondiente y tomar su pedido 😊.
+            </p>
+          </div>
+          <!-- PASO 3 -->
+          <div class="flex gap-2">
+            <div
+              class="w-6 h-6 bg-gradient-to-tr from-yellow-900 to-yellow-600 rounded-[50%] flex items-center justify-center text-xs text-white">
+              <i class="fa-solid fa-3"></i>
+            </div>
+            <p class="flex-1">
+              Una vez hayas tomado el pedido debes enviarlo al área de cocina, al seleccionar "Enviar pedido" 🤩.
+            </p>
+          </div>
+          <!-- PASO 4 -->
+          <div class="flex gap-2">
+            <div
+              class="w-6 h-6 bg-gradient-to-tr from-yellow-900 to-yellow-600 rounded-[50%] flex items-center justify-center text-xs text-white">
+              <i class="fa-solid fa-4"></i>
+            </div>
+            <p class="flex-1">
+              Una vez se haya preparado el pedido, recibirás una notificación, informándote que el pedido ya está listo,
+              acto seguido procederás a recogerlo y servirlo al comensal 😋.
+            </p>
+          </div>
+          <!-- PASO 5 -->
+          <div class="flex gap-2">
+            <div
+              class="w-6 h-6 bg-gradient-to-tr from-yellow-900 to-yellow-600 rounded-[50%] flex items-center justify-center text-xs text-white">
+              <i class="fa-solid fa-5"></i>
+            </div>
+            <p class="flex-1">
+              Finalmente, una vez el comensal haya terminado, podrás notificarle el pago por la boleta autogenerada en
+              la aplicación, si desea puede también dar una opinión y hacer comentarios 😇.
+            </p>
+          </div>
+        </div>
+        <p class="indent-8">
+          Los anteriores pasos son generales 😅, pero hay muchas más funcionalidades. Puedes explorar la aplicación a tu
+          gusto para poder descubrirlas todas 😁!
+        </p>
+        <hr class="border-black" />
+        <p class="text-right text-sm italic">Atentamente, equipo de Gourmify.</p>
+      </div>
+    </main>
+
+    <footer class="w-full p-2 bg-white flex justify-between text-sm text-right rounded-lg">
+      <p class="italic"><u class="font-medium">Designed by</u>: Gourmify</p>
+      <p class="italic">Version. 1.0.0</p>
+    </footer>
+  </div>
+
+  <script type="text/javascript" src="js/dashboard.js"></script>
+</body>
+
+</html>

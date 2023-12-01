@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- ICON TAB -->
+  <link rel="shortcut icon" href="./assets/gourmify.ico" type="image/x-icon">
+  <!-- STYLES CSS -->
+  <link rel="stylesheet" href="css/style.css">
+  <!-- TAILWIND CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- FONT AWESOME ICONS -->
+  <script src="https://kit.fontawesome.com/56fc836282.js" crossorigin="anonymous"></script>
+
+  <title>Login</title>
+</head>
+
+<body>
+  <!-- SPLASH SCREEN -->
+  <div
+    class="fixed w-screen h-screen flex items-center justify-center bg-gradient-to-tr from-yellow-900 to-yellow-600 transition-all duration-1000 ease-in rounded-l-2xl"
+    id="splash">
+    <img
+      class="absolute w-[200px] rounded-[50%] shadow-2xl transition-all duration-1000 ease-in opacity-0 translate-y-20"
+      id="splash_image" src="./assets/img/gourmify.png" alt="gourmify_logo">
+  </div>
+
+  <!-- LOGIN SCREEN -->
+  <div class="p-8 h-screen flex items-center justify-center bg-gradient-to-tr from-yellow-900 to-yellow-600">
+    <!-- FORMULARIO DE INICIO DE SESIÓN -->
+    <form action="#" method="post"
+      class="p-8 w-full h-full flex flex-col items-center justify-center gap-5 bg-white rounded-2xl shadow-yellow-900 shadow-2xl">
+      <!-- LOGO DE LA EMPRESA -->
+      <div class="flex flex-col items-center gap-2">
+        <img class="w-[100px]" src="./assets/img/el_dorado_logo.png" alt="el_dorado_logo">
+        <h1
+          class="bg-gradient-to-r from-yellow-900 to-yellow-700 inline-block text-3xl font-extrabold text-transparent bg-clip-text">
+          Iniciar sesión</h1>
+      </div>
+      <!-- DESCRIPCIÓN -->
+      <p class="font-medium">Inicia sesión con tus credenciales:</p>
+      <!-- USUARIO -->
+      <div class="w-full p-4 flex flex-col gap-2 border shadow shadow-yellow-700 rounded-lg">
+        <div class="font-bold">
+          <i class="text-yellow-900 fa-solid fa-user"></i>
+          <label class="text-yellow-700" for="usuario">Usuario</label>
+        </div>
+        <input class="px-3 py-1 shadow shadow-yellow-900 rounded-lg" type="text" id="usuario" name="usuario"
+          placeholder="Ingrese su usuario...">
+      </div>
+      <!-- CONTRASEÑA -->
+      <div class="w-full p-4 flex flex-col gap-2 border shadow shadow-yellow-700 rounded-lg">
+        <div class="font-bold">
+          <i class="text-yellow-900 fa-solid fa-key"></i>
+          <label class="text-yellow-700" for="password">Contraseña</label>
+        </div>
+        <input class="px-3 py-1 shadow shadow-yellow-900 rounded-lg" type="password" id="password" name="password"
+          placeholder="Ingrese su contraseña...">
+      </div>
+      <!-- INICIAR SESIÓN -->
+      <a href="dashboard.html"
+        class="w-full py-2 flex items-center justify-center gap-2 bg-gradient-to-tr from-yellow-900 to-yellow-600 text-white font-bold shadow-md shadow-yellow-900 rounded-lg shadow">
+        <i class="fa-solid fa-right-to-bracket"></i>
+        <p>Iniciar sesión</p>
+      </a>
+      <!-- DESCRIPCIÓN -->
+      <a class="w-full text-sm text-right underline">¿Te olvidaste la contraseña?</a>
+    </form>
+  </div>
+
+  <script type="text/javascript" src="js/index.js"></script>
+</body>
+
+</html>
